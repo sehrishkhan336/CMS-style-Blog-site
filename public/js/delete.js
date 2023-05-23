@@ -7,7 +7,7 @@ deleteBtn.addEventListener('click', async event => {
 
 	alert(id);
 
-	const response = await fetch(`/api/projects/${id}`, {
+	const response = await fetch(`/api/blogs/${id}`, {
 		method: 'DELETE'
 	});
 

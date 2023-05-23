@@ -1,6 +1,6 @@
-const projectForm = document.getElementById("project");
+const blogForm = document.getElementById("blog");
 
-projectForm.addEventListener('submit', async event => {
+blogForm.addEventListener('submit', async event => {
 	event.preventDefault();
 
 	const name = document.getElementById("proj-name").value;
@@ -11,7 +11,7 @@ projectForm.addEventListener('submit', async event => {
 	
 	console.log(formData);
 
-	const response = await fetch('/api/projects', {
+	const response = await fetch('/api/blogs', {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json'
@@ -22,6 +22,6 @@ projectForm.addEventListener('submit', async event => {
 	if (response.ok) {
 		window.location.reload();
 	} else {
-		alert('Add project failed...');
+		alert('Failed...could not add blog');
 	}
 });

@@ -1,19 +1,19 @@
 const router = require('express').Router();
-// import the Project model
+// import the Blog model
 const withAuth = require('../utils/Auth.js');
-const { Project, User } = require('../models');
+const { Blog, User } = require('../models');
 
 router.get('/', async (req, res) => {
 
     try {
-        // create variable (dbRes), that awaits the response of Project . (get all data)
-        const dbRes = await Project.findAll();
+        // create variable (dbRes), that awaits the response of Blog . (get all data)
+        const dbRes = await Blog.findAll();
         // const dishes = dishData.map((dish) => dish.get({ plain: true }));
-        const projects = dbRes.map((project) => project.get({ plain: true }));
+        const blogs = dbRes.map((blog) => blog.get({ plain: true }));
 
-        console.log(projects);
+        console.log(blogs);
 
-        res.render('home', { projects, logged_in: req.session.logged_in });
+        res.render('home', { blogs, logged_in: req.session.logged_in });
     }
     catch (err) {
         res.status(503).end();
@@ -21,11 +21,11 @@ router.get('/', async (req, res) => {
 });
 
 
-router.get('/projects/:id', async (req, res) => {
+router.get('/blogs/:id', async (req, res) => {
 
     try {
 
-        const dbRes = await Project.findOne({
+        const dbRes = await Blog.findOne({
             where: { id: req.params.id },
             include: [
                 {
@@ -35,12 +35,12 @@ router.get('/projects/:id', async (req, res) => {
             ]
         });
 
-        const project = dbRes.get({ plain: true });
-        project.logged_in = req.session.logged_in;
+        const blog = dbRes.get({ plain: true });
+        blog.logged_in = req.session.logged_in;
 
-        console.log(project);
+        console.log(blog);
 
-        res.render('project', project);
+        res.render('blog', blog);
     }
     catch (err) {
         res.status(503).end();
@@ -56,7 +56,7 @@ router.get('/profile', withAuth, async (req, res) => {
     const dbRes = await User.findByPk(req.session.user_id,
         {
             include: [
-                { model: Project }
+                { model: Blog }
             ]
         }
     );
