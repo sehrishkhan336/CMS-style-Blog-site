@@ -1,6 +1,6 @@
 {{> nav }}
 
-<h1>Profile</h1>
+<h1>Blogger Profile</h1>
 
 <h1>{{ name }}</h1>
 <a href="mailto:{{ email }}" target="_blank">Contact User</a>
@@ -16,7 +16,7 @@
 
 <p>Funding Needed: ${{ needed_funding }}</p>
 
-<a href="/projects/{{ id }}">
+<a href="/blogs/{{ id }}">
 	Click for more information
 </a>
 
@@ -29,21 +29,21 @@
 
 <hr />
 
-<form id="project">
+<form id="blog">
 	{{!-- name, description, needed_funding --}}
 <label>Name
-		<input id="proj-name" type="text" placeholder="ex. School Trip" required />
+		<input id="blog-name" type="text" placeholder="ex. School Trip" required />
 	</label>
 	<label>description:
-		<input id="proj-description" type="text" placeholder="Project description" required />
+		<input id="blog-description" type="text" placeholder="Blog description" required />
 	</label>
 	<label>
 		needed_funding
-		<input id="proj-needed_funding" type="number" required />
+		<input id="blog-needed_funding" type="number" required />
 	</label>
 
-	<input type="submit" value="Add Project"/>
+	<input type="submit" value="Add Blog"/>
 </form>
 
 <script src="/js/delete.js"></script>
-<script src="/js/addproject.js"></script>
+<script src="/js/addblog.js"></script>
