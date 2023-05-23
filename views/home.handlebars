@@ -1,0 +1,21 @@
+{{> nav }}
+
+<h1>HomePage</h1>
+
+{{!-- opening syntax --}}
+{{#each projects}}
+{{!-- closing syntax --}}
+
+<hr />
+
+<h2>{{ name }}</h2>
+
+<p>{{ description }}</p>
+
+<p>Funding Needed: ${{ needed_funding }}</p>
+
+<a href="/projects/{{ id }}">
+	Click for more information
+</a>
+
+{{/each}}

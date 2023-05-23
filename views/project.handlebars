@@ -1,0 +1,15 @@
+{{> nav }}
+
+<h1>Project</h1>
+
+<hr />
+
+<h2>{{ name }}</h2>
+
+<p>{{ description }}</p>
+
+<p>Funding Needed: ${{ needed_funding }}</p>
+
+<h3>Created by: {{ user.name }}</h3>
+<p>Created on: {{ date_created }}</p>
+<a href="mailto:{{ user.email }}" target="_blank">Contact User</a>

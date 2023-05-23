@@ -1,0 +1,49 @@
+{{> nav }}
+
+<h1>Profile</h1>
+
+<h1>{{ name }}</h1>
+<a href="mailto:{{ email }}" target="_blank">Contact User</a>
+{{!-- opening syntax --}}
+{{#each projects}}
+{{!-- closing syntax --}}
+
+<hr />
+
+<h2>{{ name }}</h2>
+
+<p>{{ description }}</p>
+
+<p>Funding Needed: ${{ needed_funding }}</p>
+
+<a href="/projects/{{ id }}">
+	Click for more information
+</a>
+
+<br />
+{{!-- below here --}}
+<button id="{{id}}">Delete</button>
+
+{{/each}}
+
+
+<hr />
+
+<form id="project">
+	{{!-- name, description, needed_funding --}}
+<label>Name
+		<input id="proj-name" type="text" placeholder="ex. School Trip" required />
+	</label>
+	<label>description:
+		<input id="proj-description" type="text" placeholder="Project description" required />
+	</label>
+	<label>
+		needed_funding
+		<input id="proj-needed_funding" type="number" required />
+	</label>
+
+	<input type="submit" value="Add Project"/>
+</form>
+
+<script src="/js/delete.js"></script>
+<script src="/js/addproject.js"></script>

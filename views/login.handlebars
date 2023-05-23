@@ -1,0 +1,41 @@
+{{> nav }}
+
+<h1>Login</h1>
+{{!-- login --}}
+{{!-- email, password, submit --}}
+<form id="login">
+	<label>
+		Email:
+		<input id="login-email" type="email" placeholder="example@email.com" required />
+	</label>
+	<label>
+		Password:
+		<input id="login-password" type="password" placeholder="pass123!" required />
+	</label>
+	<button type="submit">Login</button>
+</form>
+
+<hr />
+
+{{!-- signup --}}
+{{!-- name, email, password, submit --}}
+<form id="signup">
+	<label>Name
+		<input id="signup-name" type="text" placeholder="John Doe" required />
+	</label>
+	<label>Email:
+		<input id="signup-email" type="text" placeholder="example@email.com" required />
+	</label>
+	<label>
+		Password:
+		<input id="signup-password" type="password" placeholder="pass123!" required />
+	</label>
+	<button type="submit">Sign up</button>
+</form>
+
+
+
+
+{{!-- add js --}}
+<script src="/js/login.js"></script>
+<script src="/js/signup.js"></script>
